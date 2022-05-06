@@ -1,0 +1,149 @@
+﻿ @model Ecomm.ViewModel.UserProductViewModel
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]E-Comm</title>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://kit.fontawesome.com/d89fdb6161.js" crossorigin="anonymous"></script>
+	    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/site.css"/>
+</head>
+<body>
+    <header>
+       <div class="content-wrap">
+            <div class="wrapper">
+            <!--Nav Begins-->
+            <nav class="nav1">
+                <div class="Navbar">
+                    <div class="Navbar__Link Navbar__Link-brand" >
+                        <div id="left-nav">
+                            <span id="nav-item-adjust">EN<i class="fa-solid fa-caret-down" id="currency" id="nav-item-adjust"></i></span>
+                            <span id="nav-item-adjust">USD<i class="fa-solid fa-caret-down" id="currency" id="nav-item-adjust"></i></span>
+                        </div>
+                    </div>
+                <div class="Navbar__Items Navbar__Items--right" id="nav-move-right">
+                    <div class="Navbar__Link">
+                    @{
+                        if(Model.IsSuccess == false)
+                        {
+                          <span><a class="link-color" asp-controller="Login" asp-action="Index">Login</a></span>    
+                        }
+                        else
+                        {
+                           <span><i class="fa-regular fa-user" id="nav-item-adjust"></i><a class="link-color">My Profile</a></span>
+                        }
+                       }
+                        
+                    </div>
+                    <div class="Navbar__Link" >
+                        <span id="nav-item-adjust"><i class="fa-solid fa-cart-shopping"></i></i></span>
+                    </div>
+                    <div class="Navbar__Link">
+                        <span id="nav-item-adjust">Items</i></span>
+                    </div>
+                    <div class="Navbar__Link">
+                        <span>0.00<i class="fa-solid fa-magnifying-glass" id="nav-item-adjust"></i></i></span>
+                    </div>
+                    @if(Model.IsSuccess == true)
+                     {
+                        <span><a class="link-color" asp-controller="Login" asp-action="Index">SignOut</a></span> 
+                     }
+                </div>
+            </nav>
+            <nav class="main-nav">
+                <div class="brand">
+                    <div>
+                        <span><img src="~/img/Icon.png" alt="logo" class="logo" height="100%">
+                    </div>
+                     <div >
+                        <h4 id="ecomm">
+                             E-Comm
+                        </h4>
+                     </div>
+                </div>
+                <ul class="Navbar__Itemss">
+                    <li class="Navbar__Link Navbar__Link-toggle" id="nav2-adjust-right">
+                        <i class="fa-solid fa-bars"></i>
+                    </li>
+                    <li class="Navbar__Items"><a id="home">Home</a></li>
+                    <li class="Navbar__Items"><a>BAG</a></li>
+                    <li class="Navbar__Items"><a>SNEAKERS</a></li>
+                    <li class="Navbar__Items"><a>BELT</a></li>
+                    <li class="Navbar__Items"><a>CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+            <!--Nav Ends-->
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!--Footer-->
+            <footer class="footer">
+                <div class="footer-row-one">
+                    <div style="width:200px; margin-left:100px;">
+                        <div class="brand" style="width:150px">
+                            <div>
+                                <span><img src="img/Icon.png" alt="logo" class="logo" height="100%">
+                            </div>
+                             <div >
+                                <h4 id="ecomm">
+                                     E-Comm
+                                </h4>
+                             </div>
+                        </div>
+                        <p>lorem ipsu is simply a dummy text of th printing and typesetting industry</p>
+                    </div>
+                    <div class="footer-items">
+                        <h2>Follow US</h2>
+                        <p>lorem ipsu is simply a dummy text of th printing and typesetting industry</p>
+                        <i class="fa-brands fa-facebook-f facebook-socials"></i><i class="fa-brands fa-twitter twitter-socials"></i>
+                    </div>
+                    <div class="footer-items">
+                        <h2>Contact US</h2>
+                        <p>lorem ipsu is simply a dummy text of th printing and typesetting industry</p>
+                    </div>
+                </div>
+                <div class="footer-row-two">
+                    <div class="footer-items">
+                        <h2>Information</h2>
+                       <span>About Us</span>
+                       <span>Information</span>
+                       <span>Privacy policy</span>
+                       <span>Terms and Conditions</span>
+                    </div>
+                    <div class="footer-items">
+                        <h2>Services</h2>
+                        <span>About Us</span>
+                       <span>Information</span>
+                       <span>Privacy policy</span>
+                       <span>Terms and Conditions</span>
+                    </div>
+                    <div class="footer-items">
+                        <h2>My Account</h2>
+                        <span>About Us</span>
+                       <span>Information</span>
+                       <span>Privacy policy</span>
+                       <span>Terms and Conditions</span>
+                    </div>
+                    <div class="footer-items">
+                        <h2>Our Offers</h2>
+                        <span>About Us</span>
+                        <span>Information</span>
+                        <span>Privacy policy</span>
+                        <span>Terms and Conditions</span>
+                    </div>
+                </div>
+           </footer>
+         </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

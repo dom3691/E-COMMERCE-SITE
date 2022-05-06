@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "1ec9a52f-76d2-4707-9cba-d65c0d3952c4": {
+      "ProjectGuid": "1ec9a52f-76d2-4707-9cba-d65c0d3952c4",
+      "DisplayName": "Ecomm",
+      "ColorIndex": 0
+    },
+    "43585046-703e-4c8f-ade0-5892be333426": {
+      "ProjectGuid": "43585046-703e-4c8f-ade0-5892be333426",
+      "DisplayName": "Core",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "6a4e083e-2363-4085-80ab-6616dbde9f7a": {
+      "ProjectGuid": "6a4e083e-2363-4085-80ab-6616dbde9f7a",
+      "DisplayName": "EcommerceCore",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}

@@ -1,0 +1,15 @@
+﻿@model Ecomm.Models.User
+@{
+    ViewBag.Title = "Login Page";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+<div class="login-container">
+        <form method="post" asp-action="index" class="login-form">
+            <h2>Login</h2>
+            <h5 style="color:red">@ViewBag.InvalidLoginDetails</h5>
+            <input asp-for="Email" type="email" placeholder="Enter Email Address">
+            <input asp-for="Password" type="password" placeholder="password">
+            <input class="login-button" value="Login" type="submit">
+            <a asp-controller="Registration" asp-action="index">SignUp</a>
+        </form>
+</div>

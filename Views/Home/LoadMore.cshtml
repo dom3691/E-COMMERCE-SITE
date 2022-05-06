@@ -1,0 +1,56 @@
+﻿@model Ecomm.ViewModel.UserProductViewModel
+@{
+    ViewBag.Title = "Load More";
+}
+ <title>Load More Page</title>
+@foreach(var product in Model.Paginate(Model.Products))
+{
+    <div class="loadmore-wrapper">
+        <div class="loadmore-item">
+            <div class="img-item">
+               <img src=@product.ProductImage.ToString() width="100%">
+            </div>
+            <div class="item-text">
+            <h3>@product.Name</h3>
+            <p class="stars">
+                @{
+                    for(int i = 0; i < 5; i++)
+                    {
+                        if(i < product.Ratings)
+                        {
+                            <i class="fa-solid fa-star stars-ratings"></i>
+                        }
+                        else
+                        {           
+                            <i class="fa fa-star stars-gray"></i>
+                        }
+                    }
+                }
+              </p>
+                @{
+                    int amount = (int) product.UnitPrice;
+                    int discountAmount = (int) product.DiscountedUnitPrice;
+                    string price = Ecomm.Utilities.PricePunctuation.PriceComma($"{amount}");
+                    string discountedPrice = Ecomm.Utilities.PricePunctuation.PriceComma($"{discountAmount}");
+                }
+              <div class="load-price">
+                <p>@discountedPrice</p>
+                <p>@price</p>
+                <p>@product.PercentOff% Off</p>
+              </div>
+              <p class="desc"><strong>Description</strong> <br><br>@product.Description</p>
+            </div>
+        </div> 
+       <hr>
+    </div>
+}
+<div class="pagination">
+    @for(int i = 1; i <= Model.PageCount(Model.Products); i++)
+    {
+        <span class="@(i == Model.CurrentPage ? "index-active" : "index")">
+            <a href="@Url.Action("LoadMore", new {page = i})">@i</a></span>
+        Model.CurrentPage++;
+    }
+</div>
+
+

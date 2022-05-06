@@ -1,0 +1,18 @@
+﻿@model Ecomm.Models.User
+@{
+    ViewBag.Title = "Login Page";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+<div class="login-container">
+        <form class="login-form" method="post" asp-action="index">
+            <h2>Register</h2>
+            <input asp-for="FirstName" type="text" placeholder="Enter firstname">
+            <input asp-for="LastName" type="text" placeholder="Enter lastname">
+            <input asp-for="Email" type="email" placeholder="Enter email address">
+            <input asp-for="Password" type="password" placeholder="Enter your password">
+            <input type="password" placeholder="Conform your password">
+            <input class="login-button" value="Submit" type="submit">
+            <a asp-controller="Login" asp-action="index">Login</a>
+
+        </form>
+</div>

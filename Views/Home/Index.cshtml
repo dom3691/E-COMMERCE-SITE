@@ -1,0 +1,245 @@
+﻿ @model Ecomm.ViewModel.UserProductViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+ <section class="top-container">
+                <header class="showcase">
+                    <p>
+                        Super Flash Sale<br> 50% Off
+                    </p>
+                </header>
+</section>
+<!--Boxes Section-->
+<section class="Boxes-section">
+    <div class="boxes">
+        <div class="box box1">
+            <div class="box-overlay">
+                <div class="text-adjust" class="box-text">FS - QUILTED MAXI<br> CROSS BAG</div>
+                <p class="box-price">
+                    <span class="featured_productPrice price-strike-through">$534,33</span>&nbsp
+                    <span class="initPrice new-price">24% off</span>
+                    <span  class="discount-price-one">299,43</span>
+                </p>
+            </div>
+        </div>
+        <div class="box box2">
+            <div class="box-overlay">
+                <div class="text-adjust" class="box-text">FS - NIKE AIR<br> MAX 270 REACT...</div>
+                <span  class="discount-price-two">299,43</span>
+                <p class="box-price-center">
+                    <span>
+                        <span class="featured_productPrice price-strike-through">$534,33</span>&nbsp
+                        <span class="initPrice new-price">24% off</span>
+                    </span>
+                </p>
+            </div>
+        </div>
+        <div class="box box3">
+            <div class="box-overlay">
+                <div class="text-adjust" class="box-text">FS - NIKE AIR<br> MAX 270 REACT...</div>
+                <p class="box-price-center">
+                    <span>
+                        <span class="featured_productPrice price-strike-through">$534,33</span>&nbsp
+                        <span class="initPrice new-price">24% off</span>
+                    </span>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+    <!--Info Section-->
+<section class="info">
+    <div class="best-seller">
+        <h1>BEST SELLER</h1>
+    </div>
+    <div id="best-seller-adjust">
+        <ul id="best-seller-ul-adjust">
+            <li><a style="color: #46BCF7;">All</a></li>
+            <li><a>Bags</a></li>
+            <li><a>Sneakers</a></li>
+            <li><a>Belt</a></li>
+            <li><a>Sunglasses</a></li>
+        </ul>
+    </div>
+    <div class="Boxes-section" style="padding:0px 120px">
+        <div class="best-seller-items">
+        @{
+                int count = 0;
+            foreach(var product in Model.Products.OrderBy(x=>x.NumberOfSale).ToList())
+                    {   
+                            if(count < 8)
+                            {  <a asp-controller="Product" asp-action="index" asp-route-id="@product.Id">
+                                 <div class="best-seller-box1">
+                                <div class="best-seller-box"><img src=@product.ProductImage.ToString() width="100%"></div>
+                                <div id="text">
+                                    @product.Name 
+                                </div>
+                                <div id="features-detail">
+                            @{
+                                for(int i = 0; i < 5; i++)
+                                {
+                                    if(i < product.Ratings)
+                                    {
+                                        <i class="fa-solid fa-star stars-ratings"></i>
+                                    }
+                                    else
+                                    {    
+                                        <i class="fa fa-star stars-gray"></i>
+                                    }
+                                }
+                            }
+                            <p>
+                            @{
+                                int amount = (int) product.UnitPrice;
+                                int discountAmount = (int) product.DiscountedUnitPrice;
+                                string price = Ecomm.Utilities.PricePunctuation.PriceComma($"{amount}");
+                                string discountedPrice = Ecomm.Utilities.PricePunctuation.PriceComma($"{discountAmount}");
+                            }
+                                <span class="featured_productPrice price-color">@discountedPrice</span> 
+                                <span class="initPrice price-strike-through">@price</span>
+                                <span class="initPrice new-price">@product.PercentOff% off</span>
+                            </p>
+                            </div>
+                        </div>
+
+                        
+                                </a>
+                         count++;      
+                }
+            }
+        } 
+        </div>
+    </div>
+</section >
+<section class="info">
+    <div class="best-seller">
+            @{
+                if(Model.IsSuccess == false)
+                {
+                    <h3 id="load-more">LOAD MORE</h3>   
+                }
+                else
+                {
+                    <a asp-action="LoadMore" id="load-more"><h3>LOAD MORE</h3></a>
+                }
+            }
+    </div>
+        <section class="load-more">
+            <div class="inner-content">
+                <div>
+                    <h1 class="adidas">
+                        ADIDAS MEN RUNNING<br><br> SNIKERS
+                    </h1>
+                    <h3>
+                        performance and design. Taken right to the edge
+                    </h3>
+                    <span id="shop-now">
+                        SHOP NOW
+                    </span>
+                </div>
+                </div>
+            <div class="best-seller-img">
+                <img src="~/img/Show More Shoe.png" alt="" height="100%" > 
+            </div>
+        </section>
+</section>
+<section class="services">
+    <div style="width:250px">
+        <img src="~/img/shipping.png"  class="services-img-position" src height="100%">
+        <h3 class="services-p">FREE SHIPPING</h3>
+        <p>
+            lorem ipsu is simply a dummy text of th printing and typesetting industrt
+        </p>
+    </div>
+    <div style="width:250px">
+        <img  class="services-img-position" src="~/img/Path 1.png" height="100%">
+        <img class="services-img-position-second" src="~/img/Path 2.png" height="100%">
+        <h3 class="services-p">100% REFUND</h3>
+        <p>
+            lorem ipsu is simply a dummy text of th printing and typesetting industrt
+        </p>
+    </div>
+    <div style="width:250px">
+        <img src="~/img/Path 4.png" class="services-img-position" src height="100%">
+        <h3 class="services-p">SUPPORT 24/7</h3>
+        <p>
+            lorem ipsu is simply a dummy text of th printing and typesetting industrt
+        </p>
+    </div>
+</section>
+<section class="info">
+    <div class="best-seller">
+        <h1>LATEST NEWS</h1>
+    </div>
+    <section class="latest-news">
+    @foreach(var news in Model.LatestNews)
+    {
+        <div class="latest-inner">
+            <div class="overlay latest-img">
+                <img src= @news.NewsImage.ToString()  src width="100%">
+            </div>
+            <div class="overlay">
+                <h5 class="latest-date">@news.Date</h5>
+                <h3 style="text-align: left;">
+                    @news.Title
+                </h3>
+                <p  style="text-align: left;">
+                    @news.Body
+                </p>
+            </div>
+        </div>
+    }
+    </section>
+</section>
+<section class="info">
+    <div class="best-seller">
+        <h1>FEATURED PRODUCTS</h1>
+    </div>
+    <section class="featured" >
+        @foreach(var featuredProduct in Model.Products)
+        {
+            if (featuredProduct.Featured)
+            {
+                <a asp-action="Product">
+                    <div class="featured-column">
+                    <div id="featured-column-inner">
+                        <img src=@featuredProduct.ProductImage  id="featured-image" width="100%">
+                    </div>
+                    <div id="features-detail">
+                        <h3>@featuredProduct.Name</h3>
+                        @{
+                            for(int i = 0; i < 5; i++)
+                            {
+                                if(i < featuredProduct.Ratings)
+                                {
+                                    <i class="fa-solid fa-star stars-ratings"></i>
+                                }
+                                else
+                                {
+                                    <i class="fa fa-star stars-gray"></i>
+                                }
+                            }
+                        }
+                        <p>
+                            @{
+                                int amount = (int) featuredProduct.UnitPrice;
+                                int discountAmount = (int) featuredProduct.DiscountedUnitPrice;
+                                string price = Ecomm.Utilities.PricePunctuation.PriceComma($"{amount}");
+                                string discountedPrice = Ecomm.Utilities.PricePunctuation.PriceComma($"{discountAmount}");
+                            }
+                            <span class="featured_productPrice price-color">@discountedPrice</span> 
+                            <span class="initPrice price-strike-through">@price</span>
+                            <span class="initPrice new-price">@featuredProduct.PercentOff% off</span>
+                        </p>
+                    </div>
+                </div> 
+                </a>
+            }
+        }
+    </section>
+</section>
+<section class="centered-form">
+    <form>
+        <input class="input"><input class="button" type="submit">
+    </form>
+</section>

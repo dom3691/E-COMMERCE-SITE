@@ -1,0 +1,22 @@
+{
+  "id": 1,
+  "CategoryId": 2,
+  "Name": "odio curabitur convallis duis",
+  "Description": "amet diam in magna bibendum imperdiet nullam orci pede venenatis",
+  "ProductImage": "/img/best-seller-image(1).png",
+  "Price": 95768,
+  "Featured": false,
+  "NumberOfSale": 1,
+  "Rating": 5
+}
+{"id":2,"CategoryId":3,"Name":"Nike - AirMax","Description":"suspendisse ornare consequat lectus in est risus auctor sed tristique","ProductImage":"/img/best-seller-image(2).png","Price":151641,"Featured":false,"NumberOfSale":1,"Rating":4}
+{"id":3,"CategoryId":2,"Name":"Nike - Vaporwaffle","Description":"sit amet sapien dignissim vestibulum vestibulum ante ipsum primis in","ProductImage":"/img/best-seller-image.png","Price":183548,"Featured":false,"NumberOfSale":6,"Rating":3}
+{"id":4,"CategoryId":2,"Name":"Nike - Lunarswift","Description":"sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci","ProductImage":"/img/image-Product(1).png","Price":706110,"Featured":false,"NumberOfSale":13,"Rating":2}
+{"id":5,"CategoryId":2,"Name":"Nike - AirMax","Description":"lacinia eget tincidunt eget tempus vel pede morbi porttitor lorem","ProductImage":"/img/image-Product(2).png","Price":899341,"Featured":false,"NumberOfSale":4,"Rating":3}
+{"id":6,"CategoryId":4,"Name":"Nike Dart","Description":"duis faucibus accumsan odio curabitur convallis duis consequat dui nec","ProductImage":"/img/image-Product.png","Price":783382,"Featured":false,"NumberOfSale":3,"Rating":2}
+{"id":7,"CategoryId":1,"Name":"hac habitasse platea dictumst","Description":"ut massa quis augue luctus tincidunt nulla mollis molestie lorem","ProductImage":"/img/Product-Picture01.png","Price":627908,"Featured":false,"NumberOfSale":3,"Rating":4}
+{"id":8,"CategoryId":2,"Name":"Air Jordan 4","Description":"nonummy integer non velit donec diam neque vestibulum eget vulputate","ProductImage":"/img/Product-Picture02.png","Price":626184,"Featured":true,"NumberOfSale":16,"Rating":5}
+{"id": 9,"CategoryId": 2,"Name": "Nike Dual Fusion","Description": "gravida nisi at nibh in hac habitasse platea dictumst aliquam","ProductImage": "/img/best-seller-image.png","Price": 373176,"Featured": true,"NumberOfSale": 12,"Rating":5}
+{"id": 10,"CategoryId": 3,"Name": "Air Jordan 1","Description": "quam turpis adipiscing lorem vitae mattis nibh ligula nec sem","ProductImage": "/img/Vector(1).png","Price": 112145,"Featured": true,"NumberOfSale": 19,"Rating": 1}
+{"id": 11,"CategoryId": 2,"Name": "Nike Dunk Low","Description": "lacinia eget tincidunt eget tempus vel pede morbi porttitor lorem","ProductImage": "/img/image-Product(2).png","Price": 89000,"Featured": false,"NumberOfSale": 24,"Rating": 3}
+{"id": 12,"CategoryId": 2, "Name": "Jordan - x Dior", "Description": "lacinia eget tincidunt eget tempus vel pede morbi porttitor lorem","ProductImage": "/img/image-Product(2).png","Price": 92000, "Featured": false, "NumberOfSale": 20,"Rating": 3}
